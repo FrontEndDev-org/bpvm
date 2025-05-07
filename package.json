@@ -1,0 +1,63 @@
+{
+  "name": "bpvm",
+  "version": "0.2.0",
+  "description": "A browser sandbox based on Proxy",
+  "keywords": [
+    "sandbox",
+    "proxy",
+    "browser",
+    "vm"
+  ],
+  "homepage": "https://github.com/FrontEndDev-org/bpvm#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrontEndDev-org/bpvm.git"
+  },
+  "author": "zhengxs2018",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist-types/index.d.ts",
+  "files": [
+    "dist",
+    "dist-types"
+  ],
+  "publishConfig": {
+    "directory": "package"
+  },
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package",
+    "fields": [
+      "engines",
+      "publishConfig"
+    ]
+  },
+  "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --mode development --watch",
+    "format": "prettier src samples --write --log-level warn",
+    "clean:bundle": "rimraf dist dist-types",
+    "prepublishOnly": "pnpm build && clean-publish",
+    "postpublish": "rimraf ./package"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.14",
+    "clean-publish": "^5.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-checker": "^0.9.3",
+    "vite-plugin-dts": "^4.5.3",
+    "vite-plugin-externalize-deps": "^0.9.0"
+  }
+}

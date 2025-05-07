@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "languageId": "typescript,javascript",
+  "dictionaries": [
+    "powershell",
+    "typescript",
+    "node"
+  ],
+  "allowCompoundWords": true,
+  "useGitignore": true,
+  "ignorePaths": [
+    ".gitignore",
+    "*.d.ts"
+  ],
+  "words": [
+    "arrayify",
+    "bpvm",
+    "lcov",
+    "zhengxs"
+  ]
+}
